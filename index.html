@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fuji X-T50 Quest Log</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
         .transition-all { transition: all 0.3s ease; }
-        .hidden { display: none; }
+        .hidden { display: none !important; }
     </style>
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-teal-500 selection:text-slate-900">
@@ -38,8 +39,8 @@
             </div>
         </header>
 
-        <!-- MODULE NAVIGATION TABS -->
-        <nav class="flex space-x-2 mb-4 bg-slate-950 p-1.5 rounded-xl border border-slate-800">
+        <!-- HARDCODED NAVIGATION TABS (Guaranteed to render) -->
+        <nav class="flex space-x-2 mb-4 bg-slate-950 p-1.5 rounded-xl border border-slate-800 z-50">
             <button onclick="switchTab(1)" id="tab-btn-1" class="flex-1 py-2 text-xs font-bold rounded-lg transition-all bg-slate-800 text-teal-400 border border-slate-700/50">
                 M1: Aperture
             </button>
@@ -143,7 +144,6 @@
         </footer>
     </div>
 
-    <!-- RECONFIGURED ARCHITECTURE CORE -->
     <script>
         let gameState = {
             xp: 0,
@@ -152,19 +152,16 @@
             bossStates: { m1: false, m2: false }
         };
 
-        let currentActiveTab = 1;
-
         window.onload = function() {
             const savedState = localStorage.getItem('fuji_multitab_state');
             if (savedState) {
                 gameState = JSON.parse(savedState);
             }
             renderUI();
-            switchTab(1);
+            switchTab(1); // Force initialization on Module 1 layout
         };
 
         function switchTab(tabIndex) {
-            currentActiveTab = tabIndex;
             document.getElementById('module-panel-1').classList.add('hidden');
             document.getElementById('module-panel-2').classList.add('hidden');
             document.getElementById(`module-panel-${tabIndex}`).classList.remove('hidden');
