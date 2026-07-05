@@ -18,11 +18,11 @@
             <div class="flex items-center justify-between mb-2">
                 <div>
                     <h1 class="text-xs uppercase tracking-widest text-teal-400 font-bold">Photographer Status</h1>
-                    <h2 id="rank-display" class="text-xl font-extrabold text-white tracking-tight">Auto Mode Fugitive</h2>
+                    <h2 id="rank-display" class="text-xl font-extrabold text-white tracking-tight">Depth Isolation Tracker</h2>
                 </div>
                 <div class="bg-slate-900 px-3 py-1 rounded-full border border-teal-500/30 text-center">
                     <span class="text-xs text-slate-400 block font-medium">LEVEL</span>
-                    <span id="level-display" class="text-lg font-black text-teal-400">1</span>
+                    <span id="level-display" class="text-lg font-black text-teal-400">2</span>
                 </div>
             </div>
             
@@ -43,9 +43,9 @@
             <!-- MODULE SUMMARY -->
             <section class="bg-slate-800/40 rounded-2xl p-4 border border-slate-700/30">
                 <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Current Campaign</h3>
-                <h4 class="text-base font-bold text-white">Module 1: The Exposure Renegade</h4>
+                <h4 class="text-base font-bold text-white">Module 2: The Action Tracker</h4>
                 <p class="text-xs text-slate-400 mt-1 leading-relaxed">
-                    Mastering how light enters your 15-45mm lens. We are conquering **Aperture** (Depth of Field) first so you can isolate subjects and blur backgrounds.
+                    Fixing the blur. We are taking control of the camera's AI focus systems to lock onto moving people, animals, and city elements seamlessly.
                 </p>
             </section>
             
@@ -64,8 +64,8 @@
                     <label class="flex items-start space-x-3 text-sm cursor-pointer select-none">
                         <input type="checkbox" id="task1" onchange="toggleTask('task1', 25)" class="mt-1 accent-teal-500 rounded border-slate-600 bg-slate-800 h-4 w-4">
                         <div>
-                            <span id="task1-text" class="text-slate-200 font-medium block">Train Ride: The Depth Scan</span>
-                            <span class="text-xs text-slate-400 block mt-0.5">Look down the train car. Find a foreground object (like a handrail) and mentally blur out the background commuters. Notice how separating layers creates depth.</span>
+                            <span id="task1-text" class="text-slate-200 font-medium block">Train Ride: Predictive Tracking</span>
+                            <span class="text-xs text-slate-400 block mt-0.5">Pick a commuter walking down the aisle. Lock your eyes onto them and track them perfectly as they pass seats, anticipating their speed. Your camera will mimic this.</span>
                         </div>
                     </label>
                     <hr class="border-slate-800 my-1">
@@ -73,24 +73,24 @@
                     <label class="flex items-start space-x-3 text-sm cursor-pointer select-none">
                         <input type="checkbox" id="task2" onchange="toggleTask('task2', 25)" class="mt-1 accent-teal-500 rounded border-slate-600 bg-slate-800 h-4 w-4">
                         <div>
-                            <span id="task2-text" class="text-slate-200 font-medium block">The Walking Walk: Layer Hunting</span>
-                            <span class="text-xs text-slate-400 block mt-0.5">While walking, spot a street sign, a flower, or a coffee cup. Position your eyes so it is close to you while the city background is far away. That distance is key for your lens.</span>
+                            <span id="task2-text" class="text-slate-200 font-medium block">The Walking Walk: Spotting the Peak Moment</span>
+                            <span class="text-xs text-slate-400 block mt-0.5">Watch pedestrians or cars pass intersections. Try to look for the exact fraction of a second where they stop or cross a beam of light. This is when you click the shutter.</span>
                         </div>
                     </label>
                 </div>
             </section>
 
             <!-- BOSS BATTLE CARD -->
-            <section class="bg-slate-800 rounded-2xl p-5 shadow-xl border border-slate-700/50">
+            <section class="bg-slate-800 rounded-2xl p-5 shadow-xl border border-rose-700/50">
                 <div class="flex items-center justify-between mb-3">
                     <h3 class="text-sm font-bold uppercase tracking-wider text-rose-400 flex items-center gap-1.5">
                         ⚔️ Weekend Boss Battle
                     </h3>
                     <span class="text-[10px] bg-rose-500/10 text-rose-400 border border-rose-500/20 px-2 py-0.5 rounded-md font-mono">10 MIN TIMER</span>
                 </div>
-                <h4 class="text-base font-bold text-white mb-1">Execution: Breaking the Blur Kit</h4>
+                <h4 class="text-base font-bold text-white mb-1">Execution: Pinpoint Tracking Strike</h4>
                 <p class="text-xs text-slate-400 leading-relaxed mb-4">
-                    Grab your X-T50. Turn your top Mode Dial to **A (Aperture Priority)**. Use the front command dial to zoom your lens all the way out to **15mm**, and set your aperture to **f/3.5** (widest open). Get close to a subject (a family member, pet, or street object) and capture the shot. Then zoom to **45mm**, drop to **f/5.6**, step back, and shoot again to see how zoom alters blur!
+                    Flip your front focus switch to **C (Continuous)**. In the settings menu, set your Autofocus mode to **Zone** or **Tracking**. Find a moving target—your kids playing, a running pet, or a passing car. Hold the shutter button *halfway down* and watch the green tracking boxes stick to them like a video game lock-on, then press fully to fire. 
                 </p>
                 
                 <button id="boss-btn" onclick="completeBossBattle(50)" class="w-full bg-gradient-to-r from-rose-600 to-orange-500 hover:from-rose-500 hover:to-orange-400 text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-rose-900/20 active:scale-[0.98] transition-all text-sm tracking-wide">
@@ -98,18 +98,19 @@
                 </button>
             </section>
 
-            <!-- HARDWARE CHEAT SHEET -->
+            <!-- RECIPE DECK -->
             <section class="bg-slate-800 rounded-2xl p-5 shadow-xl border border-slate-700/50">
-                <h3 class="text-sm font-bold uppercase tracking-wider text-teal-400 mb-3">Active Fuji Recipe Card</h3>
-                <div class="bg-slate-900 p-4 rounded-xl border border-slate-700/50">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="text-xs font-mono text-slate-500">RECIPE UNLOCKED</span>
-                        <span class="text-[10px] bg-teal-500/10 text-teal-400 border border-teal-500/20 px-1.5 py-0.5 rounded font-mono">ALL-ROUNDER</span>
+                <h3 class="text-sm font-bold uppercase tracking-wider text-teal-400 mb-3">Unlocked Fuji Recipe Deck</h3>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-slate-900 p-3 rounded-xl border border-slate-700/30">
+                        <div class="text-xs font-mono text-slate-500">RECIPE 01</div>
+                        <div class="text-sm font-bold text-white mt-0.5">Classic Negative</div>
+                        <div class="text-[11px] text-teal-400 mt-2 font-mono">Dials: Left Dial -> NC</div>
                     </div>
-                    <div class="text-base font-bold text-white">Classic Negative Film Profile</div>
-                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Perfect for giving everyday street structures and candid family snapshots a rich, cinematic, high-contrast film look instantly.</p>
-                    <div class="mt-3 text-xs bg-slate-950 p-2 rounded border border-slate-800 font-mono text-emerald-400">
-                        ⚙️ Setup: Rotate the left top dial to <span class="underline">NC</span> (Classic Neg)
+                    <div class="bg-slate-900 p-3 rounded-xl border border-slate-700/50">
+                        <div class="text-xs font-mono text-emerald-500">🎉 UNLOCKED</div>
+                        <div class="text-sm font-bold text-white mt-0.5">Monochrome Acros</div>
+                        <div class="text-[11px] text-teal-400 mt-2 font-mono">Dials: Left Dial -> A</div>
                     </div>
                 </div>
             </section>
@@ -123,11 +124,10 @@
         </footer>
     </div>
 
-    <!-- CODE LOGIC ENGINE -->
     <script>
         let gameState = {
-            xp: 0,
-            level: 1,
+            xp: 100,
+            level: 2,
             tasks: { task1: false, task2: false },
             bossCompleted: false
         };
@@ -135,7 +135,15 @@
         window.onload = function() {
             const savedState = localStorage.getItem('fuji_quest_state');
             if (savedState) {
-                gameState = JSON.parse(savedState);
+                let parsed = JSON.parse(savedState);
+                if(parsed.level === 1) { 
+                    // Automatically progress them to level 2 parameters
+                    parsed.level = 2; 
+                    parsed.xp = 100;
+                    parsed.tasks = { task1: false, task2: false };
+                    parsed.bossCompleted = false;
+                }
+                gameState = parsed;
             }
             renderUI();
         };
@@ -143,8 +151,7 @@
         function renderUI() {
             document.getElementById('level-display').innerText = gameState.level;
             
-            let rank = "Auto Mode Fugitive";
-            if (gameState.level === 2) rank = "Depth Isolation Tracker";
+            let rank = "Depth Isolation Tracker";
             if (gameState.level >= 3) rank = "Shutter Motion Master";
             document.getElementById('rank-display').innerText = rank;
 
@@ -160,13 +167,13 @@
 
             const bossBtn = document.getElementById('boss-btn');
             if (gameState.bossCompleted) {
-                bossBtn.innerText = "✓ Module 1 Conquered!";
+                bossBtn.innerText = "✓ Module 2 Conquered!";
                 bossBtn.disabled = true;
                 bossBtn.className = "w-full bg-slate-700 text-slate-400 font-bold py-3 px-4 rounded-xl cursor-not-allowed text-sm";
             } else {
                 bossBtn.innerText = "Claim Boss Reward (+50 XP)";
                 bossBtn.disabled = false;
-                bossBtn.className = "w-full bg-gradient-to-r from-rose-600 to-orange-500 hover:from-rose-500 hover:to-orange-400 text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-rose-900/20 active:scale-[0.98] transition-all text-sm tracking-wide";
+                bossBtn.className = "w-gradient bg-gradient-to-r from-rose-600 to-orange-500 hover:from-rose-500 hover:to-orange-400 text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-rose-900/20 active:scale-[0.98] transition-all text-sm tracking-wide";
             }
         }
 
