@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuji X-T50 Quest Log</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .transition-all { transition: all 0.3s ease; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-teal-500 selection:text-slate-900">
+
+    <div class="max-w-md mx-auto min-h-screen flex flex-col justify-between p-4 pb-24">
+        
+        <!-- HEADER STATUS -->
+        <header class="bg-slate-800 rounded-2xl p-4 shadow-xl border border-slate-700/50 mb-4">
+            <div class="flex items-center justify-between mb-2">
+                <div>
+                    <h1 class="text-xs uppercase tracking-widest text-teal-400 font-bold">Photographer Status</h1>
+                    <h2 id="rank-display" class="text-xl font-extrabold text-white tracking-tight">Auto Mode Fugitive</h2>
+                </div>
+                <div class="bg-slate-900 px-3 py-1 rounded-full border border-teal-500/30 text-center">
+                    <span class="text-xs text-slate-400 block font-medium">LEVEL</span>
+                    <span id="level-display" class="text-lg font-black text-teal-400">1</span>
+                </div>
+            </div>
+            
+            <div class="mt-4">
+                <div class="flex justify-between text-xs text-slate-400 mb-1 font-medium">
+                    <span>Progress to Next Module</span>
+                    <span id="xp-text">0 / 100 XP</span>
+                </div>
+                <div class="w-full bg-slate-900 rounded-full h-3 p-0.5 border border-slate-700">
+                    <div id="xp-bar" class="bg-gradient-to-r from-teal-500 to-emerald-400 h-2 rounded-full transition-all duration-500" style="width: 0%"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN QUESTS -->
+        <main class="flex-grow space-y-4">
+            
+            <!-- MODULE SUMMARY -->
+            <section class="bg-slate-800/40 rounded-2xl p-4 border border-slate-700/30">
+                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Current Campaign</h3>
+                <h4 class="text-base font-bold text-white">Module 1: The Exposure Renegade</h4>
+                <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+                    Mastering how light enters your 15-45mm lens. We are conquering **Aperture** (Depth of Field) first so you can isolate subjects and blur backgrounds.
+                </p>
+            </section>
+            
+            <!-- COMMUTE QUEST CARD -->
+            <section class="bg-slate-800 rounded-2xl p-5 shadow-xl border border-slate-700/50">
+                <div class="flex items-center space-x-2 mb-3">
+                    <span class="flex h-2 w-2 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+                    </span>
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-amber-400">Commute Side Quests (No Camera)</h3>
+                </div>
+                
+                <div class="space-y-3 bg-slate-900/60 p-4 rounded-xl border border-slate-700/30">
+                    <!-- Train Task -->
+                    <label class="flex items-start space-x-3 text-sm cursor-pointer select-none">
+                        <input type="checkbox" id="task1" onchange="toggleTask('task1', 25)" class="mt-1 accent-teal-500 rounded border-slate-600 bg-slate-800 h-4 w-4">
+                        <div>
+                            <span id="task1-text" class="text-slate-200 font-medium block">Train Ride: The Depth Scan</span>
+                            <span class="text-xs text-slate-400 block mt-0.5">Look down the train car. Find a foreground object (like a handrail) and mentally blur out the background commuters. Notice how separating layers creates depth.</span>
+                        </div>
+                    </label>
+                    <hr class="border-slate-800 my-1">
+                    <!-- Walk Task -->
+                    <label class="flex items-start space-x-3 text-sm cursor-pointer select-none">
+                        <input type="checkbox" id="task2" onchange="toggleTask('task2', 25)" class="mt-1 accent-teal-500 rounded border-slate-600 bg-slate-800 h-4 w-4">
+                        <div>
+                            <span id="task2-text" class="text-slate-200 font-medium block">The Walking Walk: Layer Hunting</span>
+                            <span class="text-xs text-slate-400 block mt-0.5">While walking, spot a street sign, a flower, or a coffee cup. Position your eyes so it is close to you while the city background is far away. That distance is key for your lens.</span>
+                        </div>
+                    </label>
+                </div>
+            </section>
+
+            <!-- BOSS BATTLE CARD -->
+            <section class="bg-slate-800 rounded-2xl p-5 shadow-xl border border-slate-700/50">
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-rose-400 flex items-center gap-1.5">
+                        ⚔️ Weekend Boss Battle
+                    </h3>
+                    <span class="text-[10px] bg-rose-500/10 text-rose-400 border border-rose-500/20 px-2 py-0.5 rounded-md font-mono">10 MIN TIMER</span>
+                </div>
+                <h4 class="text-base font-bold text-white mb-1">Execution: Breaking the Blur Kit</h4>
+                <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                    Grab your X-T50. Turn your top Mode Dial to **A (Aperture Priority)**. Use the front command dial to zoom your lens all the way out to **15mm**, and set your aperture to **f/3.5** (widest open). Get close to a subject (a family member, pet, or street object) and capture the shot. Then zoom to **45mm**, drop to **f/5.6**, step back, and shoot again to see how zoom alters blur!
+                </p>
+                
+                <button id="boss-btn" onclick="completeBossBattle(50)" class="w-full bg-gradient-to-r from-rose-600 to-orange-500 hover:from-rose-500 hover:to-orange-400 text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-rose-900/20 active:scale-[0.98] transition-all text-sm tracking-wide">
+                    Claim Boss Reward (+50 XP)
+                </button>
+            </section>
+
+            <!-- HARDWARE CHEAT SHEET -->
+            <section class="bg-slate-800 rounded-2xl p-5 shadow-xl border border-slate-700/50">
+                <h3 class="text-sm font-bold uppercase tracking-wider text-teal-400 mb-3">Active Fuji Recipe Card</h3>
+                <div class="bg-slate-900 p-4 rounded-xl border border-slate-700/50">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-xs font-mono text-slate-500">RECIPE UNLOCKED</span>
+                        <span class="text-[10px] bg-teal-500/10 text-teal-400 border border-teal-500/20 px-1.5 py-0.5 rounded font-mono">ALL-ROUNDER</span>
+                    </div>
+                    <div class="text-base font-bold text-white">Classic Negative Film Profile</div>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Perfect for giving everyday street structures and candid family snapshots a rich, cinematic, high-contrast film look instantly.</p>
+                    <div class="mt-3 text-xs bg-slate-950 p-2 rounded border border-slate-800 font-mono text-emerald-400">
+                        ⚙️ Setup: Rotate the left top dial to <span class="underline">NC</span> (Classic Neg)
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="fixed bottom-0 left-0 right-0 max-w-md mx-auto p-4 bg-slate-900/90 backdrop-blur-md border-t border-slate-800">
+            <button onclick="resetState()" class="w-full border border-slate-700 hover:border-slate-600 text-slate-400 hover:text-slate-300 font-mono text-[11px] py-2 rounded-lg transition-all">
+                Reset Campaign Progress Data
+            </button>
+        </footer>
+    </div>
+
+    <!-- CODE LOGIC ENGINE -->
+    <script>
+        let gameState = {
+            xp: 0,
+            level: 1,
+            tasks: { task1: false, task2: false },
+            bossCompleted: false
+        };
+
+        window.onload = function() {
+            const savedState = localStorage.getItem('fuji_quest_state');
+            if (savedState) {
+                gameState = JSON.parse(savedState);
+            }
+            renderUI();
+        };
+
+        function renderUI() {
+            document.getElementById('level-display').innerText = gameState.level;
+            
+            let rank = "Auto Mode Fugitive";
+            if (gameState.level === 2) rank = "Depth Isolation Tracker";
+            if (gameState.level >= 3) rank = "Shutter Motion Master";
+            document.getElementById('rank-display').innerText = rank;
+
+            const currentLevelXP = gameState.xp % 100;
+            document.getElementById('xp-text').innerText = `${currentLevelXP} / 100 XP`;
+            document.getElementById('xp-bar').style.width = `${currentLevelXP}%`;
+
+            document.getElementById('task1').checked = gameState.tasks.task1;
+            updateTaskStyle('task1', gameState.tasks.task1);
+            
+            document.getElementById('task2').checked = gameState.tasks.task2;
+            updateTaskStyle('task2', gameState.tasks.task2);
+
+            const bossBtn = document.getElementById('boss-btn');
+            if (gameState.bossCompleted) {
+                bossBtn.innerText = "✓ Module 1 Conquered!";
+                bossBtn.disabled = true;
+                bossBtn.className = "w-full bg-slate-700 text-slate-400 font-bold py-3 px-4 rounded-xl cursor-not-allowed text-sm";
+            } else {
+                bossBtn.innerText = "Claim Boss Reward (+50 XP)";
+                bossBtn.disabled = false;
+                bossBtn.className = "w-full bg-gradient-to-r from-rose-600 to-orange-500 hover:from-rose-500 hover:to-orange-400 text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-rose-900/20 active:scale-[0.98] transition-all text-sm tracking-wide";
+            }
+        }
+
+        function toggleTask(taskId, xpVal) {
+            const isChecked = document.getElementById(taskId).checked;
+            gameState.tasks[taskId] = isChecked;
+            addXP(isChecked ? xpVal : -xpVal);
+            saveToStorage();
+        }
+
+        function updateTaskStyle(id, isChecked) {
+            const textEl = document.getElementById(`${id}-text`);
+            if (isChecked) {
+                textEl.classList.add('line-through', 'text-slate-500');
+            } else {
+                textEl.classList.remove('line-through', 'text-slate-500');
+            }
+        }
+
+        function completeBossBattle(xpVal) {
+            if (!gameState.bossCompleted) {
+                gameState.bossCompleted = true;
+                addXP(xpVal);
+                saveToStorage();
+            }
+        }
+
+        function addXP(amount) {
+            gameState.xp += amount;
+            if (gameState.xp < 0) gameState.xp = 0;
+            gameState.level = Math.floor(gameState.xp / 100) + 1;
+            renderUI();
+        }
+
+        function saveToStorage() {
+            localStorage.setItem('fuji_quest_state', JSON.stringify(gameState));
+        }
+
+        function resetState() {
+            if (confirm("Reset all progress back to Level 1?")) {
+                localStorage.removeItem('fuji_quest_state');
+                gameState = {
+                    xp: 0,
+                    level: 1,
+                    tasks: { task1: false, task2: false },
+                    bossCompleted: false
+                };
+                renderUI();
+            }
+        }
+    </script>
+</body>
+</html>
